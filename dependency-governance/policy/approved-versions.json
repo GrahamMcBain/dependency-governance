@@ -1,0 +1,10 @@
+{
+  "express": {
+    "required": "5.1.0",
+    "reason": "CVE in 4.x request handling; 5.1.0 is the minimum approved version."
+  },
+  "lodash": {
+    "required": "4.17.21",
+    "reason": "Minimum patched version (prototype pollution fixes)."
+  }
+}

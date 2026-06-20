@@ -1,0 +1,6 @@
+{
+  "name": "dependency-governance",
+  "description": "Audits project dependencies against the org's approved-version policy and blocks commits that violate it.",
+  "version": "0.1.0",
+  "author": { "name": "Graham McBain" }
+}
