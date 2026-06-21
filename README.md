@@ -57,12 +57,10 @@ git add package.json     # package.json declares express ^4.18.2, below the appr
 claude --plugin-dir ../dependency-governance
 ```
 
-Then, inside the Claude Code session:
-
-1. **`/hooks`**: confirm the `PreToolUse` (Bash) hook is listed. If it is not, quit and relaunch, because a cold session is what registers plugin hooks.
-2. **`Use the dependency-governor agent to audit my dependencies.`** You will get a report: `express 4.18.2` must be `>= 5.1.0`, plus a warning that `lodash` has no policy entry.
-3. **`Commit package.json with the message "test".`** The hook blocks the commit and tells you why.
-4. **`Fix the violation and commit with the message "chore: bump express".`** The agent bumps express to `^5.1.0`, and the same commit now goes through.
+Then, inside the Claude Code session test the plugin with the following prompts:
+1. **`Use the dependency-governor agent to audit my dependencies.`** You will get a report: `express 4.18.2` must be `>= 5.1.0`, plus a warning that `lodash` has no policy entry.
+2. **`Commit package.json with the message "test".`** The hook blocks the commit and tells you why.
+3. **`Fix the violation and commit with the message "chore: bump express".`** The agent bumps express to `^5.1.0`, and the same commit now goes through.
 
 That is the whole loop: audit, ignore, blocked, fix, allowed.
 
