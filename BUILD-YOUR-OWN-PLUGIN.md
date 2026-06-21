@@ -1,6 +1,6 @@
 # Build your own Claude Code plugin
 
-Here is how to build your own plugin for a different workflow in your org. You have seen `dependency-governance`. The recipe is the same for any job your team keeps policing by hand, whether that is a compliance check, a code standard, or a release gate.
+Here is how to build your own plugin for a different workflow in your org. You have seen `dependency-governance`. The recipe is the same for any job your team keeps repeatedly dealing with, whether that is a compliance check, a code standard, or a release gate.
 
 ## Think of a plugin as a single-purpose teammate
 
