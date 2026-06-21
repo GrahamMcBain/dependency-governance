@@ -1,6 +1,6 @@
 # dependency-governance
 
-A Claude Code plugin that keeps a project's dependencies compliant with your organization's **approved-version policy**, caught in the dev loop instead of at build or deploy time.
+A Claude Code plugin that keeps a project's dependencies compliant with your organization's **approved-version policy**.
 
 ## Who it's for
 
@@ -8,12 +8,12 @@ The **platform engineer who manages dependency governance across an entire organ
 
 ## What it does
 
-When a big vulnerability is published, there is usually a good way to make the *main* fix. At Sourcegraph, for example, you can sweep and upgrade every affected repo at once. But that one-time fix does not stay fixed: nothing stops a developer from reintroducing the old, vulnerable version the next day, heads-down and not thinking about it. It then slips through until build, deploy, or never.
+This plugin uses an agent to scan through a projects dependecies and suggest changes to the developer. The agent uses a skill to interpret the companies dependency policy, and a hook to enforce that policy. 
 
-This plugin enforces the policy *in the dev loop* so that cannot happen quietly:
+More specifically:
 
 - **`dependency-governor` agent**: audits the project's `package.json` against the approved-version policy and explains exactly what is out of date and why. It flags packages with no policy entry instead of guessing, and it *suggests* fixes rather than silently applying them.
-- **commit hook** (`PreToolUse`): the backstop. If you try to commit while a dependency violates policy, the commit is **blocked** with the reason, even if you ignored the agent's advice. This is deterministic. The model does not get a vote.
+- **`commit hook`** (`PreToolUse`): the backstop. If you try to commit while a dependency violates policy, the commit is **blocked** with the reason, even if you ignored the agent's advice. This is deterministic. 
 - **`approved-version-policy` skill**: the reusable knowledge for interpreting the policy (approved, required-update, or unknown) and communicating it.
 - **policy file** (`policy/approved-versions.json`): the source of truth. In production you would swap the file read in `check-policy.mjs` for a call to Artifactory, Nexus, or an internal policy API.
 
