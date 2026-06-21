@@ -45,7 +45,7 @@ The agent and the hook share a single engine, `check-policy.mjs`: the agent runs
 
 ```bash
 # 1. Clone
-git clone https://github.com/<your-username>/dependency-governance.git
+git clone https://github.com/GrahamMcBain/dependency-governance.git
 cd dependency-governance
 
 # 2. Turn the bundled demo app into a git repo with a deliberate violation
@@ -54,7 +54,6 @@ git init
 git add package.json     # package.json declares express ^4.18.2, below the approved 5.1.0
 
 # 3. Launch Claude Code with the plugin loaded.
-#    Use a FRESH session. Plugin hooks activate on session start, not on /reload-plugins.
 claude --plugin-dir ../dependency-governance
 ```
 
