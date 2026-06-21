@@ -4,7 +4,7 @@ Here is how to build your own plugin for a different workflow in your org. You h
 
 ## Think of a plugin as a single-purpose teammate
 
-Hand it one repetitive job and tool it up to do it well. A plugin is built from four parts, and the whole skill is knowing which one does what.
+Hand it one repetitive job and tool it up to do it well. A plugin is built from four parts, the trick is knowing which one does what.
 
 | Part | What it is | When to use it |
 |---|---|---|
